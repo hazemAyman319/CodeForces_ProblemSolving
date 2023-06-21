@@ -2,28 +2,16 @@
 using namespace std;
 int main()
 {
-	int myRes1,myRes2;
-	//                        0   1   2   3
-	string num1; // "160"   ['1,'6','0']
-	cin>>num1;
-	int size = num1.size(); // 3
-	char num2[size];  // ['0','6','1']
-	int counter = 0;
-	for(int i = size-1;i>=0;i--){
-		num2[counter] = num1[i];
-		counter++;
+	string value;  // value[0]
+	//          0   1   2   3
+	// abba   ['a','b','b','a']
+	cin>>value;
+	int size = value.size(); // 4
+	for(int i=0;i<size/2;i++){ // i = 1
+		if(value[i] != value[size - 1 - i]){
+			cout<<"NO"<<endl;
+			return 0;
+		}
 	}
-	stringstream s1;
-	s1<<num1;
-	s1>>myRes1; // 160
-	stringstream s2;
-	s2<<num2;
-	s2>>myRes2;  // 61
-	cout<<myRes2<<endl;
-	if(myRes1 == myRes2){
-		cout<<"YES"<<endl;
-	} else {
-		cout<<"NO"<<endl;
-	}
-	
+	cout<<"YES"<<endl;
 }
