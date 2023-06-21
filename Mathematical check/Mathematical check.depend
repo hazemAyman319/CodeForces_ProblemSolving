@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1658509168 source:c:\users\hp\documents\courses\programming and computing\dotpy\mathematical check\main.c
+	<stdio.h>
+	<stdlib.h>
+

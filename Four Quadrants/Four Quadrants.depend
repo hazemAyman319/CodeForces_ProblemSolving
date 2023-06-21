@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1658506367 source:c:\users\hp\documents\courses\programming and computing\dotpy\four quadrants\main.c
+	<stdio.h>
+	<stdlib.h>
+

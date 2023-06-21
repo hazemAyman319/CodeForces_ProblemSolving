@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1687198716 source:c:\users\hp\documents\courses\programming and computing\problem solving\practice problem solving\practise_solving\main.cpp
+	<iostream>
+	<math.h>
+	<bits/stdc++.h>
+

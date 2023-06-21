@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1658623347 source:c:\users\hp\documents\courses\programming and computing\dotpy\finddigits\main.c
+	<stdio.h>
+	<stdlib.h>
+
