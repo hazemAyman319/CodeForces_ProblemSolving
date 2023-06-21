@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1660907002 source:c:\users\hp\documents\courses\programming and computing\dotpy\stack example prac\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	"Stack.h"
+
+1660906869 c:\users\hp\documents\courses\programming and computing\dotpy\stack example prac\stack.h
+

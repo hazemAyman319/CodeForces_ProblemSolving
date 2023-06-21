@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1658688661 source:c:\users\hp\documents\courses\programming and computing\dotpy\watermelon\main.c
+	<stdio.h>
+	<stdlib.h>
+

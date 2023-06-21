@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1573042654 source:c:\users\meshm\desktop\queueimp\main.c
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+
+1573042735 source:c:\users\meshm\desktop\queueimp\queue.c
+	"queue.h"
+
+1573042735 c:\users\meshm\desktop\queueimp\queue.h
+
+1660920393 source:c:\users\hp\documents\courses\programming and computing\dotpy\queueimp\main.c
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+
+1660920635 c:\users\hp\documents\courses\programming and computing\dotpy\queueimp\queue.h
+
+1573043087 source:c:\users\hp\documents\courses\programming and computing\dotpy\queueimp\queue.c
+	"queue.h"
+

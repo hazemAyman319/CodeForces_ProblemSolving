@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1660279205 source:c:\users\meshm\desktop\stack example\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	"Stack.h"
+
+1660757974 c:\users\meshm\desktop\stack example\stack.h
+
+1660279112 source:c:\users\meshm\desktop\stack example\stack.cpp
+	"Stack.h"
+
+1666021159 source:c:\users\hp\documents\courses\programming and computing\dotpy\stack example\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	"Stack.h"
+
+1661373970 c:\users\hp\documents\courses\programming and computing\dotpy\stack example\stack.h
+
+1666021195 source:c:\users\hp\documents\courses\programming and computing\dotpy\stack example\stack.cpp
+	"Stack.h"
+
