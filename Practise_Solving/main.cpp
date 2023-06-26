@@ -4,36 +4,30 @@
 using namespace std;
 int main()
 {
-    long long size , min_time=10000000000000, flag=0 , temp , real_temp;
-    cin>>size;
-    char dir[size];
+    int size , min_dis , max_dis; cin>>size;
     int arr[size];
-    for(int i=0;i<size;i++)
-    {
-        cin>>dir[i];
-    }
     for(int i=0;i<size;i++)
     {
         cin>>arr[i];
     }
-    for(int i=1;i<size;i++)
+    for(int i=0;i<size;i++)
     {
-        if(dir[i-1]=='R' && dir[i]=='L')
+        if(i==0)
         {
-            flag=1;
-            temp=(arr[i]-arr[i-1])/2;
-            if(min_time > temp)
-            {
-                min_time = temp;
-            }
+            min_dis = arr[i+1]-arr[i];
+            max_dis = arr[size-1]-arr[i];
+            cout<<min_dis<<" "<<max_dis<<endl;
+            continue;
         }
-    }
-    if(flag == 0)
-    {
-        cout<<-1;
-    }
-    else
-    {
-        cout<<min_time;
+        if(i==size-1)
+        {
+            min_dis = arr[size-1]-arr[size-2];
+            max_dis = arr[size-1]-arr[0];
+            cout<<min_dis<<" "<<max_dis<<endl;
+            continue;
+        }
+        min_dis = min(arr[i]-arr[i-1] , arr[i+1]-arr[i]);
+        max_dis = max(arr[i] - arr[0], arr[size-1]-arr[i]);
+        cout<<min_dis<<" "<<max_dis<<endl;
     }
 }
