@@ -15,7 +15,7 @@ int main()
             pali = 0;
         }
     }
-    if(pli==0)
+    if(pali==0)
     {
         cout<<size<<endl;
         return 0;
