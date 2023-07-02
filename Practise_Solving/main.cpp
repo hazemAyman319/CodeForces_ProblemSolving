@@ -2,43 +2,94 @@
 #include<math.h>
 #include<bits/stdc++.h>
 using namespace std;
+void FAST()
+{
+    ios_base::sync_with_stdio(0) , cin.tie(0) , cout.tie(0);
+}
 int main()
 {
-    string word;
-    cin>>word;
-    int size=word.size();
-    bool pali = 1;
-    for(int i=0;i<size;i++)
+    FAST();
+    int row , column , process;
+    cin>>row>>column>>process;
+    // array starting from 1 index
+    int arr[row+1][column+1];
+    for(int i=1;i<=row;i++)
     {
-        if(word[i] != word[size-i-1])
+        for(int j=1;j<=column;j++)
         {
-            pali = 0;
+            cin>>arr[i][j];
         }
     }
-    if(pli==0)
+    int arrR[row+1];
+    int arrC[column+1];
+    for(int i=1;i<=row;i++)
     {
-        cout<<size<<endl;
-        return 0;
+        arrR[i]=i;
     }
-    long long arr[10000];
-    for(int i=0;i<size;i++)
+    for(int i=1;i<=column;i++)
     {
-        arr[word[i]]++;
+        arrC[i]=i;
     }
-    long long res=0;
-    for(int i='a';i<='z';i++)
+    while(process--)
     {
-        if(arr[i]>0)
+        char c;
+        int num1 , num2;
+        cin>>c>>num1>>num2;
+        if(c=='g')
         {
-            res++;
+            int r = arrR[num1];
+            int c = arrC[num2];
+            cout<<arr[r][c]<<"\n";
         }
-    }
-    if(res==1)
-    {
-        cout<<0<<endl;
-    }
-    else
-    {
-        cout<<size - 1<<endl;
+        else if(c=='r')
+        {
+            swap(arrR[num1],arrR[num2]);
+        }
+        else if(c=='c')
+        {
+            swap(arrC[num1],arrC[num2]);
+        }
     }
 }
+
+
+
+
+/*
+    FAST();
+    char letter;
+    int line1 , line2;
+    int rows , columns , ins; cin>>rows>>columns>>ins;
+    int arr[rows][columns];
+    for(int i=0;i<rows;i++)
+    {
+        for(int j=0;j<columns;j++)
+        {
+            cin>>arr[i][j];
+        }
+    }
+    while(ins--)
+    {
+        cin>>letter>>line1>>line2;
+        if(letter == 'c')
+        {
+            for(int i=0;i<rows;i++)
+            {
+                swap(arr[i][line1-1] , arr[i][line2-1]);
+            }
+            continue;
+        }
+        if(letter == 'r')
+        {
+            for(int i=0;i<columns;i++)
+            {
+                swap(arr[line1-1][i] , arr[line2-1][i]);
+            }
+            continue;
+        }
+        if(letter == 'g')
+        {
+            cout<<arr[line1-1][line2-1]<<endl;
+        }
+    }
+    */
