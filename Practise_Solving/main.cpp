@@ -9,22 +9,32 @@ void FAST()
 int main()
 {
     FAST();
-    int size , flag=0;
-    string res="NO";
-    cin>>size;
-    int arr[size];
-    for(int i=0;i<size;i++)
+    int size , div;
+    string result ="";
+    cin>>size>>div;
+    //size < 2 && div = 10
+    //the only case to print -1
+    if(size < 2 && div == 10)
     {
-        cin>>arr[i];
+        cout<<-1<<endl;
     }
-    sort(arr , arr+size);
-    for(int i=size-1;i>=2;i--)
+    //size >= 2 && div = 10
+    else if(size >= 2 && div == 10)
     {
-        if(arr[i] + arr[i-1] > arr[i-2] && arr[i-1] + arr[i-2] > arr[i] && arr[i] + arr[i-2] > arr[i-1])
+        for(int i=0;i<size-1;i++)
         {
-            res="YES";
-            break;
+            result += 1 + '0';
         }
+        result += 0 + '0';
+        cout<<result<<endl;
     }
-    cout<<res;
+    //size = x && div != 10
+    else
+    {
+        for(int i=0;i<size;i++)
+        {
+            result += div + '0';
+        }
+        cout<<result<<endl;
+    }
 }
