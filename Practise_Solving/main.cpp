@@ -2,6 +2,7 @@
 #include<math.h>
 #include<bits/stdc++.h>
 using namespace std;
+long long arr[1000001]={0};
 void FAST()
 {
     ios_base::sync_with_stdio(0) , cin.tie(0) , cout.tie(0);
@@ -9,32 +10,26 @@ void FAST()
 int main()
 {
     FAST();
-    int size , div;
-    string result ="";
-    cin>>size>>div;
-    //size < 2 && div = 10
-    //the only case to print -1
-    if(size < 2 && div == 10)
+    arr[1]=1;
+    for(long long i=2; i<=1000; i++)
     {
-        cout<<-1<<endl;
-    }
-    //size >= 2 && div = 10
-    else if(size >= 2 && div == 10)
-    {
-        for(int i=0;i<size-1;i++)
+        for(long long z=2*i; z<=1000000;z+=i)
         {
-            result += 1 + '0';
+            arr[z]=1;
         }
-        result += 0 + '0';
-        cout<<result<<endl;
     }
-    //size = x && div != 10
-    else
+    int size;
+    cin>>size;
+    while(size--)
     {
-        for(int i=0;i<size;i++)
-        {
-            result += div + '0';
+        long long num; cin>>num;
+        long long sq = sqrt(num);
+        if(sq * sq == num && arr[sq]==0){
+                cout<<"YES"<<endl;
         }
-        cout<<result<<endl;
+        else
+        {
+            cout<<"NO"<<endl;
+        }
     }
 }
