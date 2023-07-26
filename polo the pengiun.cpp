@@ -16,7 +16,7 @@ int main()
         cin>>x>>y;
         cover+=(y-x+1);
     }
-    cover % = num;
+    cover %= num;
     if(cover == 0)
     {
         cout<<0;
