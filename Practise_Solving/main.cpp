@@ -2,7 +2,6 @@
 #include<math.h>
 #include<bits/stdc++.h>
 using namespace std;
-long long arr[1000001]={0};
 void FAST()
 {
     ios_base::sync_with_stdio(0) , cin.tie(0) , cout.tie(0);
@@ -10,26 +9,26 @@ void FAST()
 int main()
 {
     FAST();
-    arr[1]=1;
-    for(long long i=2; i<=1000; i++)
+    int size , num;
+    cin>>size>>num;
+    int points = size * 2 + 1;
+    int arr[points];
+    for(int i=0;i<points;i++)
     {
-        for(long long z=2*i; z<=1000000;z+=i)
+        cin>>arr[i];
+    }
+    for(int i=1;i<points;i++)
+    {
+        if(arr[i]>arr[i-1] + 1 && arr[i]>arr[i+1] + 1)
         {
-            arr[z]=1;
+            arr[i]--;
+            num--;
+            if(num==0)
+                break;
         }
     }
-    int size;
-    cin>>size;
-    while(size--)
+    for(int i=0;i<points;i++)
     {
-        long long num; cin>>num;
-        long long sq = sqrt(num);
-        if(sq * sq == num && arr[sq]==0){
-                cout<<"YES"<<endl;
-        }
-        else
-        {
-            cout<<"NO"<<endl;
-        }
+        cout<<arr[i]<<" ";
     }
 }
