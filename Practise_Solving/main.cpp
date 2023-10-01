@@ -2,6 +2,7 @@
 #include<math.h>
 #include<bits/stdc++.h>
 using namespace std;
+int range , target;
 void FAST()
 {
     ios_base::sync_with_stdio(0) , cin.tie(0) , cout.tie(0);
@@ -9,52 +10,31 @@ void FAST()
 int main()
 {
     FAST();
-    string s1 , s2;
-    int res=0 , counter=0, freq_s1[26]={0} , freq_s2[26]={0};
-    cin>>s1>>s2;
-    for(int i=0;i<s1.size();i++)
+    int size , query , sum=0 , index;
+    cin>>size>>query;
+    int arr[size+1]={0};
+    for(int i=1;i<=size;i++)
     {
-        freq_s1[s1[i]-'a']++;
+        cin>>arr[i];
     }
-    for(int i=0;i<s2.size();i++)
+    sort(arr+1 , arr+size+1 , greater<int>());
+    for(int i=1;i<=size;i++)
     {
-        freq_s2[s2[i]-'a']++;
+        arr[i]+=arr[i-1];
     }
-    for(int i=0;i<26;i++)
+    while(query--)
     {
-        if(freq_s2[i] > 0 && freq_s1[i] == 0)
+        int l,r; cin>>l>>r;
+        if(l==1)
         {
-            cout << "-1" << endl;
-            return 0;
-        }
-        res+= min(freq_s1[i], freq_s2[i]);
-    }
-    cout << res << endl;
-}
-
-
-/*
-for(int i=0;i<26;i++)
-    {
-        if(min(freq_s1[i] , freq_s2[i])==0 && freq_s1[i] != freq_s2[i]) //one of them is a zero and the other is a number
-        {
-            continue;
+            sum+=arr[r];
         }
         else
         {
-            if(min(freq_s1[i] , freq_s2[i])!=0) //both are not zero
-            {
-                counter++;
-            }
-            res+=min(freq_s1[i] , freq_s2[i]);
+            index=r-l;
+            r=r-index;
+            sum+=arr[r];
         }
     }
-    if(res==0 || counter==1)
-    {
-        cout<<-1;
-    }
-    if(counter != 1 && res != 0)
-    {
-        cout<<res;
-    }
-*/
+    cout<<sum;
+}
